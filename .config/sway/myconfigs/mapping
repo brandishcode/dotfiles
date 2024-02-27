@@ -1,0 +1,22 @@
+set $menu wofi --show=drun
+set $browser floorp
+set $lock swaylock -i ~/.background/default
+
+# power
+bindsym XF86PowerOff exec swaynag -t warning -m 'Do you really want to hibernate?' -Z 'Yes, hibernate' 'systemctl hibernate'
+bindsym Shift+XF86PowerOff exec swaynag -t warning -m 'Do you really want to shutdown?' -Z 'Yes, shutdown' 'systemctl poweroff'
+
+# lock
+bindsym $mod+Shift+x exec $lock
+
+# browser
+bindsym $mod+Shift+b exec $browser
+
+# volume control
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# brightness control
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-

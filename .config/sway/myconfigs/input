@@ -1,0 +1,5 @@
+input * {
+  xkb_layout "jp"
+  xkb_model "jp106"
+  xkb_options "japan:kana_lock"
+}
