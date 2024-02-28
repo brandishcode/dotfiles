@@ -4,7 +4,7 @@ set $lock swaylock -i ~/.background/default
 
 # power
 bindsym XF86PowerOff exec swaynag -t warning -m 'Do you really want to hibernate?' -Z 'Yes, hibernate' 'systemctl hibernate'
-bindsym Shift+XF86PowerOff exec swaynag -t warning -m 'Do you really want to shutdown?' -Z 'Yes, shutdown' 'systemctl poweroff'
+bindsym Shift+XF86PowerOff exec swaynag -t warning -m 'Do you really want to shutdown?' -Z 'Yes, shutdown' 'shutdown -h now'
 
 # lock
 bindsym $mod+Shift+x exec $lock
