@@ -225,7 +225,7 @@ bar {
 }
 
 include /etc/sway/config.d/*
-include ~/.config/sway/myconfigs/input
-include ~/.config/sway/myconfigs/startup
-include ~/.config/sway/myconfigs/mapping
-include ~/.config/sway/myconfigs/display
+include ~/.config/sway/myconfigs/input.conf
+include ~/.config/sway/myconfigs/startup.conf
+include ~/.config/sway/myconfigs/mapping.conf
+include ~/.config/sway/myconfigs/display.conf
