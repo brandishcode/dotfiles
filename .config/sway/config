@@ -228,3 +228,4 @@ include /etc/sway/config.d/*
 include ~/.config/sway/myconfigs/input
 include ~/.config/sway/myconfigs/startup
 include ~/.config/sway/myconfigs/mapping
+include ~/.config/sway/myconfigs/display
