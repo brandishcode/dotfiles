@@ -1,0 +1,1 @@
+--print(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1])

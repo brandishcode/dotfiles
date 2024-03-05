@@ -22,9 +22,10 @@ return require('packer').startup(function(use)
       {'hrsh7th/nvim-cmp'},
       {'hrsh7th/cmp-nvim-lsp'},
       {'L3MON4D3/LuaSnip'},
-      {'mfussenegger/nvim-jdtls'}
     }
   }
+
+  use 'mfussenegger/nvim-jdtls'
 
   use 'tpope/vim-fugitive'
   use 'mbbill/undotree'
@@ -43,4 +44,5 @@ return require('packer').startup(function(use)
 
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
+  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 end)
