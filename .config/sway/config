@@ -229,3 +229,4 @@ include ~/.config/sway/myconfigs/input.conf
 include ~/.config/sway/myconfigs/startup.conf
 include ~/.config/sway/myconfigs/mapping.conf
 include ~/.config/sway/myconfigs/display.conf
+include ~/.config/sway/myconfigs/window.conf
