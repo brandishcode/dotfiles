@@ -24,6 +24,19 @@ require('mason-lspconfig').setup({
   ensure_installed = {'jdtls', 'clangd'},
   handlers = {
     lsp_zero.default_setup,
+    jdtls = lsp_zero.noop, 
+    -- tsserver = function()
+    --   require('lspconfig').tsserver.setup({
+    --     settings = {
+    --       completions = {
+    --         completeFunctionCalls = true
+    --       },
+    --       implicitProjectConfiguration = {
+    --         checkJs = true
+    --       }
+    --     }
+    --   })
+    -- end,
   },
 })
 
@@ -64,5 +77,4 @@ lsp_zero.defaults.cmp_mappings({
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({select = true}),
   ['<C-Spaces>'] = cmp.mapping.complete(),
-
 })
