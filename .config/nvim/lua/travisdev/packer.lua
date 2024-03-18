@@ -20,6 +20,8 @@ return require('packer').startup(function(use)
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},
       {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-vsnip'},
+      {'hrsh7th/vim-vsnip'},
       {'L3MON4D3/LuaSnip'},
     }
   }
@@ -44,4 +46,5 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+  use 'stevearc/conform.nvim'
 end)

@@ -44,6 +44,16 @@ require('mason-lspconfig').setup({
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 cmp.setup({
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'vsnip' }
+  },
+  snippet = {
+    expand = function(args)
+      vim.fn['vsnip#anonymous'](args.body)
+    end
+  },
   window = {
     completion = {
       winhighlight = "Normal:NormalNC,FloatBorder:NormalNC,Search:None",

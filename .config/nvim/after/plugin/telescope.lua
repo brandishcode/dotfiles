@@ -4,6 +4,7 @@ vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ps', function()
   builtin.grep_string({search = vim.fn.input("Grep > ")})
 end)
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
@@ -26,3 +27,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('i', '<C-h>', function() vim.lsp.buf.signature_help() end, { buffer = event.buf, desc = 'LSP: Signature Help' })
   end
 })
+
