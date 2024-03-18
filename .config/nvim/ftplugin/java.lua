@@ -4,3 +4,10 @@ local config = {
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
 }
 require('jdtls').start_or_attach(config)
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.java',
+  callback = function(args)
+    require('conform').format({ bufnr = args.buf })
+  end
+})
