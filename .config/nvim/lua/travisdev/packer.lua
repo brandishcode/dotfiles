@@ -37,12 +37,6 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use {
-    "ThePrimeagen/harpoon",
-    branch = "harpoon2",
-    requires = { {"nvim-lua/plenary.nvim"} }
-  }
-
   use 'windwp/nvim-autopairs'
   use 'windwp/nvim-ts-autotag'
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
