@@ -41,4 +41,15 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
   use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
   use 'stevearc/conform.nvim'
+
+  use {
+    'trabeast/thymeleaf-compile.nvim',
+    branch = 'develop',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function()
+      require('thymeleaf.compile').setup({
+        pattern = "*.md"
+      })
+    end
+  }
 end)
