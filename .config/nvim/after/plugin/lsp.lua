@@ -2,10 +2,10 @@
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guide/integrate-with-mason-nvim.md
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = {'jdtls', 'clangd', 'lua_ls'},
+  ensure_installed = {'jdtls', 'clangd', 'lua_ls', 'tsserver', 'tailwindcss'},
   handlers = {
     lua_ls = function()
-      require'lspconfig'.lua_ls.setup {
+      require'lspconfig'.lua_ls.setup({
         on_init = function(client)
           local path = client.workspace_folders[1].name
           if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -35,7 +35,13 @@ require('mason-lspconfig').setup({
         settings = {
           Lua = {}
         }
-      }
+      })
+    end,
+    tsserver = function()
+      require"lspconfig".tsserver.setup({})
+    end,
+    tailwindcss = function()
+      require"lspconfig".tailwindcss.setup({})
     end
   },
 })

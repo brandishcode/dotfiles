@@ -21,3 +21,5 @@ set scrolloff=8
 set colorcolumn=80
 
 set scrolloff=8
+
+set nohlsearch
