@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
   use 'stevearc/conform.nvim'
 
   use {
-    'trabeast/thymeleaf-compile.nvim',
+    'brandishcode/thymeleaf-compile.nvim',
     branch = 'develop',
     requires = { {'nvim-lua/plenary.nvim'} },
     config = function()
