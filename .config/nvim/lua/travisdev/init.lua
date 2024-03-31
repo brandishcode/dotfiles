@@ -1,3 +1,3 @@
-require('travisdev.packer')
-require('travisdev.mapping')
-require('travisdev.editor')
+require("travisdev.packer")
+require("travisdev.mapping")
+require("travisdev.editor")

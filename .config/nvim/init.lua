@@ -1,2 +1,2 @@
-vim.cmd('source' .. '/etc/vimrc')
-require('travisdev')
+vim.cmd("source" .. "/etc/vimrc")
+require("travisdev")
