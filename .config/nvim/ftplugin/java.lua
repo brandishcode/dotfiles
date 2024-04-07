@@ -1,6 +1,6 @@
 local install_path = require("mason-registry").get_package("jdtls"):get_install_path()
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = vim.fn.expand("~/Development/projects/mvn/workspace/" .. project_name)
+local workspace_dir = vim.fn.expand(os.getenv("MYCONFIG_NVIM_JAVA_WORKSPACE") .. project_name)
 
 local config = {
 	cmd = {
@@ -23,6 +23,14 @@ local config = {
 	},
 	root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	init_options = {
+		bundles = {
+			vim.fn.glob(vim.fn.expand(os.getenv("MYCONFIG_NVIM_JAVA_DEBUG")), 1),
+		},
+	},
+	on_attach = function(client, bufnr)
+		require("jdtls").setup_dap({ hotcodereplace = "auto" })
+	end,
 }
 require("jdtls").start_or_attach(config)
 
@@ -33,6 +41,23 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 
-vim.opt_local.shiftwidth = 4
-vim.opt_local.softtabstop = 4
-vim.opt_local.tabstop = 4
+local function attach_to_debug()
+	require("dap").configurations.java = {
+		{
+			type = "java",
+			request = "attach",
+			name = "Debug (Attach) - Remote",
+			hostName = "127.0.0.1",
+			port = 8000,
+		},
+	}
+	require("dap").continue()
+end
+
+local function show_dap_scopes()
+	local widgets = require("dap.ui.widgets")
+	widgets.centered_float(widgets.scopes)
+end
+
+vim.keymap.set("n", "<leader>da", attach_to_debug)
+vim.keymap.set("n", "<leader>dS", show_dap_scopes)

@@ -28,6 +28,7 @@ return require("packer").startup(function(use)
 	})
 
 	use("mfussenegger/nvim-jdtls")
+	use("mfussenegger/nvim-dap")
 
 	use("tpope/vim-fugitive")
 	use("mbbill/undotree")
