@@ -15,7 +15,7 @@ local config = {
 		"--add-modules=ALL-SYSTEM",
 		"-javaagent:" .. install_path .. "/lombok.jar",
 		"-jar",
-		install_path .. "/plugins/org.eclipse.equinox.launcher_1.6.700.v20231214-2017.jar",
+		install_path .. "/plugins/org.eclipse.equinox.launcher_1.6.800.v20240330-1250.jar",
 		"-configuration",
 		install_path .. "/config_linux",
 		"-data",
